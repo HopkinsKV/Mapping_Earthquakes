@@ -4,22 +4,14 @@ console.log("working");
 // Create the map object with a center and zoom level.
 let map = L.map('mapid').setView([34.0522, -118.2437], 14);
 
-// Alternative to above. Modifies each attribute in the map object. 
-// Good for mult tile layers or background img of maps.
-// let map = L.map("mapid", {
-//     center: [
-//       40.7, -94.5
-//     ],
-//     zoom: 4
-//   });
 
-// //  Add a marker to the map for Los Angeles, California.
-// let marker = L.marker([34.0522, -118.2437]).addTo(map);
+//  Add a marker to the map for Los Angeles, California.
+let marker = L.marker([34.0522, -118.2437]).addTo(map);
 
-// // Add a circle to the map for LA. Adjust Radius for circle size.
-// L.circle([34.0522, -118.2437], {
-//     radius: 100
-//  }).addTo(map);
+// Add a circle to the map for LA. Adjust Radius for circle size.
+L.circle([34.0522, -118.2437], {
+    radius: 100
+ }).addTo(map);
 
 // Add a circle marker
 L.circleMarker([34.0522, -118.2437], {
