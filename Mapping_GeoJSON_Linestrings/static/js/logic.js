@@ -32,11 +32,17 @@ L.control.layers(baseMaps).addTo(map);
 // Accessing the GeoJSON URL
 let torontoData = "https://raw.githubusercontent.com/HopkinsKV/Mapping_Earthquakes/main/torontoRoutes.json";
 
+// Create a style for the lines.
+let myStyle = {
+  color: "#ff630d",
+  weight: 2
+}
+
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
 L.geoJSON(data, {
- weight: 2,
- onEachFeature: function(feature, layer) {
+  style: myStyle,
+  onEachFeature: function(feature, layer) {
    layer.bindPopup("<h3> Airline: " + feature.properties.airline + "</h3> <hr><h3> Destination: " + feature.properties.dst + "</h3>");}}
     )
 .addTo(map);
