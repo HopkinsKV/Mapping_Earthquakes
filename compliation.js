@@ -157,6 +157,8 @@ let sanFranAirport =
 // Grabbing our GeoJSON data.
 L.geoJSON(sanFranAirport).addTo(map);
 
+
+
 // POINT TO LAYER
 L.geoJSON(sanFranAirport, {
   // We turn each feature into a marker on the map.
@@ -269,4 +271,12 @@ L.geoJSON(data, {
    layer.bindPopup("<h3> Airline: " + feature.properties.airline + "</h3> <hr><h3> Destination: " + feature.properties.dst + "</h3>");}}
     )
 .addTo(map);
+});
+
+
+// 13.6.1 - last 7 days earthquakes
+// Retrieve the earthquake GeoJSON data.
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
+  // Creating a GeoJSON layer with the retrieved data.
+  L.geoJSON(data).addTo(map);
 });
