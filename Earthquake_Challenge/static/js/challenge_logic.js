@@ -201,8 +201,8 @@ legend.onAdd = function() {
     color: "#0cad4a",
     weight: 2
 }
-  // https://github.com/fraxen/tectonicplates/blob/master/GeoJSON/PB2002_boundaries.json
-  d3.json("https://raw.githubusercontent.com/HopkinsKV/Mapping_Earthquakes/main/tectonicData.json").then(function(data) {
+  // If this link throws errors, backupdata is available: https://raw.githubusercontent.com/HopkinsKV/Mapping_Earthquakes/main/tectonicData.json
+  d3.json("https://github.com/fraxen/tectonicplates/blob/master/GeoJSON/PB2002_boundaries.json").then(function(data) {
   L.geoJSON(data, {
     style:plateStyle
   }).addTo(tectonic);
